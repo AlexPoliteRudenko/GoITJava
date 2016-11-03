@@ -162,7 +162,7 @@ public class AllTasksInOne {
         }
     }
 
-    private static void fillArray(int[] array) {
+    public static void fillArray(int[] array) {
 
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 101 - 50);
