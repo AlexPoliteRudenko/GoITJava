@@ -49,12 +49,13 @@ public class AllTasksInOne {
         int secondLargest = 0;
         int max = array[0];
         boolean firstMaxCheck = false;
-        for (int item : array) {
-            if (max <= item) {
+        for (int i = 1; i < array.length; i++) {
+            if (max <= array[i]) {
                 secondLargest = max;
-                max = item;
+                max = array[i];
                 firstMaxCheck = true;
             }
+
         }
         if (!firstMaxCheck) {
             secondLargest = array[1];
