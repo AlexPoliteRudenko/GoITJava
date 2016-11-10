@@ -1,4 +1,4 @@
-package Core.Module03.Homework;
+package Core.Module03.Homework.Task3_3;
 
 public class SpecialStudent extends CollegeStudent {
     private long secretKey;

@@ -1,4 +1,4 @@
-package Core.Module03.Homework;
+package Core.Module03.Homework.Task3_1;
 
 public class Bird {
         public static void sing() {
