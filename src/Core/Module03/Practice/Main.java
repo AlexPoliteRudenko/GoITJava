@@ -35,7 +35,7 @@ public class Main {
         workers[9] = worker10;
         int salarySum = 0;
         for (int i = 0; i < 10; i++) {
-            System.out.println(workers[i].getIdentifyer() + " " + workers[i].getSurname() +
+            System.out.println(workers[i].getId() + " " + workers[i].getSurname() +
                     " " + workers[i].getName() + ", " + workers[i].getGender() +
                     ", gets " + workers[i].getSalary());
             salarySum += workers[i].getSalary();
