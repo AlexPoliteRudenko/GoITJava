@@ -13,13 +13,13 @@ public class CollegeStudent extends Student {
         super(lastName, coursesTaken);
     }
 
-    CollegeStudent() {
-    }
+    CollegeStudent(String lastName, Course[] coursesTaken, String collegeName, int rating, long id) {
 
-    CollegeStudent(String collegeName, int rating, long id) {
+        super(lastName, coursesTaken);
         this.collegeName = collegeName;
         this.rating = rating;
         this.id = id;
+
     }
 
     public String getCollegeName() {

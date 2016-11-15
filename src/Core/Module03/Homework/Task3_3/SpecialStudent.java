@@ -4,20 +4,23 @@ public class SpecialStudent extends CollegeStudent {
     private long secretKey;
     private String email;
 
-
-    public SpecialStudent(long secretKey, String email) {
-        this.secretKey = secretKey;
-        this.email = email;
+    SpecialStudent(String firstName, String lastName, int group) {
+        super(firstName, lastName, group);
     }
 
-    public SpecialStudent(String lastName, Course[] coursesTaken) {
+    SpecialStudent(String lastName, Course[] coursesTaken, String collegeName, int rating, long id) {
+        super(lastName, coursesTaken, collegeName, rating, id);
+    }
 
+    SpecialStudent(String lastName, Course[] coursesTaken, long secretKey) {
         super(lastName, coursesTaken);
+        this.secretKey = secretKey;
     }
 
     public void setSecretKey(long secretKey) {
         this.secretKey = secretKey;
     }
+
 
     public void setEmail(String email) {
         this.email = email;
@@ -30,9 +33,5 @@ public class SpecialStudent extends CollegeStudent {
 
     public String getEmail() {
         return email;
-    }
-    public SpecialStudent(String firstName, String lastName, int group) {
-
-        super(firstName, lastName, group);
     }
 }

@@ -1,23 +1,25 @@
 package Core.Module03.Homework.Task3_3;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Course {
-    private Date startDate;
+    private GregorianCalendar startDate;
     private String name;
     private int hoursDuration;
     private String teacherName;
-    Course(Date startDate, String name, int hoursDuration, String teacherName){
-        this.startDate = startDate;
+
+    Course(String name, int hoursDuration, String teacherName){
         this.name = name;
         this.hoursDuration = hoursDuration;
-        this. teacherName = teacherName;
+        this.teacherName = teacherName;
     }
 
-    public Course() {
+    public Course(GregorianCalendar startDate, String name) {
+        this.startDate = startDate;
+        this.name = name;
     }
 
-    public Date getStartDate() {
+    public GregorianCalendar getStartDate() {
         return startDate;
     }
 
@@ -33,7 +35,7 @@ public class Course {
         return teacherName;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(GregorianCalendar startDate) {
         this.startDate = startDate;
     }
 
