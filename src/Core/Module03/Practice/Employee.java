@@ -14,6 +14,8 @@ public class Employee extends Person {
         this.id = counter;
     }
 
+
+
     public int getId() {
         return id;
     }
