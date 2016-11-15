@@ -19,7 +19,7 @@ public class ArrayMatrix {
         return arrayMatrix;
     }
 
-    private static int[] createRandomArray(int n) {
+    public static int[] createRandomArray(int n) {
         int[] array = new int[n];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int)(Math.random()*101);
