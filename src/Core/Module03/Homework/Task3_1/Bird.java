@@ -1,15 +1,21 @@
 package Core.Module03.Homework.Task3_1;
 
 public class Bird {
-        public static void sing() {
-        System.out.println("I am walking");
-        System.out.println("I am flying");
-        System.out.println("I am singing");
-        System.out.println("I am Bird");
+    public String sing(String s) {
+        return s + "ing";
     }
 
-        public static void main(String[] args) {
-                sing();
-        }
+    private String sing() {
+        return "Bird";
+    }
+
+    public static void main(String[] args) {
+        Bird bird = new Bird();
+        System.out.println("I am " + bird.sing("walk"));
+        System.out.println("I am " + bird.sing("fly"));
+        System.out.println("I am " + bird.sing("sing"));
+        System.out.println("I am " + bird.sing());
+    }
+
 
 }
