@@ -1,4 +1,4 @@
-package core.module04.homework.task4_1;
+package core.module04.homework;
 
 public abstract class Bank {
     private long id;
