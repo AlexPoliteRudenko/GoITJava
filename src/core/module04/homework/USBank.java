@@ -7,21 +7,53 @@ public class USBank extends Bank {
 
     @Override
     int getLimitOfWithdrawal() {
-        return 0;
+        if (this.getCurrency() == Currency.USD) {
+            return 1000;
+        } else if (this.getCurrency() == Currency.EUR) {
+            return 1200;
+        } else {
+            return -1;
+        }
     }
 
     @Override
     int getLimitOfFunding() {
-        return 0;
+        if (this.getCurrency() == Currency.USD) {
+            return Integer.MAX_VALUE;
+        } else if (this.getCurrency() == Currency.EUR) {
+            return 10000;
+        } else {
+            return -1;
+        }
     }
 
     @Override
     int getMonthlyRate() {
-        return 0;
+        if (this.getCurrency() == Currency.USD) {
+            return 1;
+        } else if (this.getCurrency() == Currency.EUR) {
+            return 2;
+        } else {
+            return -1;
+        }
     }
 
     @Override
     int getCommission(int summ) {
-        return 0;
+        if (this.getCurrency() == Currency.USD) {
+            if (summ <= 1000) {
+                return 5;
+            } else {
+                return 7;
+            }
+        } else if (this.getCurrency() == Currency.EUR) {
+            if (summ <= 1000) {
+                return 6;
+            } else {
+                return 8;
+            }
+        } else {
+            return -1;
+        }
     }
 }

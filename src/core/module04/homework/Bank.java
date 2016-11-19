@@ -10,11 +10,20 @@ public abstract class Bank {
     private long totalCapital;
 
     abstract int getLimitOfWithdrawal();
+
     abstract int getLimitOfFunding();
+
     abstract int getMonthlyRate();
+
     abstract int getCommission(int summ);
+
     double moneyPaidMonthlyForSalary() {
-        return 0;
+        return getNumberOfEmployees() * getAvrSalaryOfEmployee();
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
     }
 
     public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
