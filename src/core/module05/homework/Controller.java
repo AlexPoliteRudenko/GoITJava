@@ -4,7 +4,6 @@ public class Controller {
     API[] apis = new API[3];
 
     Controller() {
-//        System.out.println("API set");
         this.apis[0] = new BookingComAPI();
         this.apis[1] = new GoogleAPI();
         this.apis[2] = new TripAdvisorAPI();
@@ -31,7 +30,6 @@ public class Controller {
         Room[] result;
         int searchCounter = 0;
         for (Room aRoomsAPI1 : roomsAPI1) {
-//            TODO
             result = api2.findRooms(aRoomsAPI1.getPrice(), aRoomsAPI1.getPersons(), aRoomsAPI1.getCityName(), aRoomsAPI1.getHotelName());
             for (int i = 0; i < result.length; i++) {
                 if (result[i] != null) {

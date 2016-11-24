@@ -14,12 +14,12 @@ public class Main {
 
 
         System.out.println("Check similar rooms in different apies:");
-        API[] getApiArray = control.getApis();
-        result = control.check(getApiArray[0], getApiArray[1]);
+        API[] apiArray = control.getApis();
+        result = control.check(apiArray[0], apiArray[1]);
         printResult(result);
-        result = control.check(getApiArray[0], getApiArray[2]);
+        result = control.check(apiArray[0], apiArray[2]);
         printResult(result);
-        result = control.check(getApiArray[2], getApiArray[1]);
+        result = control.check(apiArray[2], apiArray[1]);
         printResult(result);
     }
 
