@@ -1,5 +1,7 @@
 package core.module06.homework;
 
+import java.util.Arrays;
+
 public class UserUtils {
     public static User[] uniqueUsers(User[] users) {
         User[] usersUnique = new User[0];
@@ -71,5 +73,9 @@ public class UserUtils {
         return usersNotEmpty;
 
 
+    }
+
+    public static void printUsersArray(User[] users) {
+        System.out.println(Arrays.toString(users));
     }
 }
