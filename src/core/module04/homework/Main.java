@@ -43,7 +43,7 @@ public class Main {
             }
             System.out.println();
             System.out.println(user.getName() + " balance properties after operations:");
-            System.out.println(user.toString("balance"));
+            System.out.println(user.getBalance());
             System.out.println();
         }
     }

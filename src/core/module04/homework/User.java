@@ -22,37 +22,6 @@ public class User {
                 '}';
     }
 
-    public String toString(String simpleNameOfVariable) {
-        String sout = "    ";
-        switch (simpleNameOfVariable) {
-            case "id":
-                sout += simpleNameOfVariable + " " + getId();
-                break;
-            case "name":
-                sout += simpleNameOfVariable + " " + getName();
-                break;
-            case "balance":
-                sout += simpleNameOfVariable + " " + getBalance();
-                break;
-            case "monthsOfEmployment":
-                sout += simpleNameOfVariable + " " + getMonthsOfEmployment();
-                break;
-            case "companyName":
-                sout += simpleNameOfVariable + " " + getCompanyName();
-                break;
-            case "salary":
-                sout += simpleNameOfVariable + " " + getSalary();
-                break;
-            case "bank":
-                sout += simpleNameOfVariable + " " + getBank().toString();
-                break;
-            default:
-                sout += "Entered invalid variable name";
-        }
-        return sout;
-    }
-
-
 
     public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;
