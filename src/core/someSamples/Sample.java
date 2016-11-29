@@ -1,4 +1,4 @@
-package core;
+package core.someSamples;
 
 import java.util.Arrays;
 import java.util.Scanner;

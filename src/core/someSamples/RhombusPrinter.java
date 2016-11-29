@@ -1,9 +1,9 @@
-package core;
+package core.someSamples;
 
 import java.util.Scanner;
 
 /**
- * Task 5** (core.RhombusPrinter)
+ * Task 5** (core.someSamples.RhombusPrinter)
  * Вывод в консоль ромба размера size (нечетное число). Если size – четное или
  * отрицательное, бросить исключение IllegalArgumentException.
  */

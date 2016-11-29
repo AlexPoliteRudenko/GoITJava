@@ -1,7 +1,7 @@
 package core.module03.practice;
 
 import static core.module02.practice.ArrayMatrix.createRandomArray;
-import static core.Sample.matrixPrinter;
+import static core.someSamples.Sample.matrixPrinter;
 
 import static core.module02.practice.FactorialCycle.getN;
 

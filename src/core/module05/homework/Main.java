@@ -1,35 +1,37 @@
 package core.module05.homework;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Room[] result;
-
+        System.out.println("Search room:");
         Controller control = new Controller();
         result = control.requstRooms(150, 2, "Kyiv", "Hilton");
-        printResult(result);
+        System.out.println(Arrays.toString(result));
         result = control.requstRooms(400, 2, "Kyiv", "Hyatt");
-        printResult(result);
+        System.out.println(Arrays.toString(result));
         result = control.requstRooms(500, 1, "Kyiv", "Hyatt");
-        printResult(result);
+        System.out.println(Arrays.toString(result));
 
 
         System.out.println("Check similar rooms in different apies:");
         API[] apiArray = control.getApis();
         result = control.check(apiArray[0], apiArray[1]);
-        printResult(result);
+        System.out.println(Arrays.toString(result));
         result = control.check(apiArray[0], apiArray[2]);
-        printResult(result);
+        System.out.println(Arrays.toString(result));
         result = control.check(apiArray[2], apiArray[1]);
-        printResult(result);
+        System.out.println(Arrays.toString(result));
+
+        System.out.println("Processing with DB:");
+        Room room;
+        //TODO
+//        room = control.save(apiArray[0].);
+        result = control.dataBase.getAll();
+        System.out.println(Arrays.toString(result));
+
     }
 
-    private static void printResult(Room[] result) {
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] != null) {
-                System.out.println(result[i].toString());
-            }
-        }
-        System.out.println();
-    }
 }
 
