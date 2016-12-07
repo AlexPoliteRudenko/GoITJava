@@ -7,6 +7,15 @@ public class User {
     private String city;
     private int balance;
 
+    @Override
+    public String toString() {
+        return "{ " +
+                firstName + '\'' +
+                lastName + '\'' +
+                city + '\'' + ' ' +
+                '}';
+    }
+
     public User(long id, String firstName, String lastName, String city, int balance) {
         this.id = id;
         this.firstName = firstName;
