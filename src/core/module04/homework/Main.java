@@ -21,13 +21,7 @@ public class Main {
 
         //
         BankSystemImpl implementation = new BankSystemImpl();
-        User[] users = new User[6];
-        users[0] = user1;
-        users[1] = user2;
-        users[2] = user3;
-        users[3] = user4;
-        users[4] = user5;
-        users[5] = user6;
+        User[] users = {user1, user2, user3, user4, user5, user6};
 //        Test
         for (User user : users) {
             System.out.println(user.getName() + " balance properties before operations:");

@@ -1,6 +1,6 @@
 package core.module04.homework;
 
-enum Currency {
+public enum Currency {
     USD,
     EUR
 }
