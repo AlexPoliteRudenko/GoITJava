@@ -4,12 +4,12 @@ public class Main {
     public static void main(String[] args) {
 
 //         Banks
-        USBank bank1 = new USBank(12, "USA", Currency.USD, 30, 20000, 5, 1000000);
-        USBank bank2 = new USBank(10, "Canada", Currency.EUR, 100, 15000, 3, 2000000);
-        EUBank bank3 = new EUBank(23, "France", Currency.EUR, 150, 10000, 10, 4000000L);
-        EUBank bank4 = new EUBank(30, "Germany", Currency.USD, 120, 14000, 8, 3500000L);
-        ChinaBank bank5 = new ChinaBank(1120, "China", Currency.EUR, 1020, 8000, 25, 300500000L);
-        ChinaBank bank6 = new ChinaBank(1300, "China", Currency.USD, 923, 7500, 45, 200500000L);
+        Bank bank1 = new USBank(12, "USA", Currency.USD, 30, 20000, 5, 1000000);
+        Bank bank2 = new USBank(10, "Canada", Currency.EUR, 100, 15000, 3, 2000000);
+        Bank bank3 = new EUBank(23, "France", Currency.EUR, 150, 10000, 10, 4000000L);
+        Bank bank4 = new EUBank(30, "Germany", Currency.USD, 120, 14000, 8, 3500000L);
+        Bank bank5 = new ChinaBank(1120, "China", Currency.EUR, 1020, 8000, 25, 300500000L);
+        Bank bank6 = new ChinaBank(1300, "China", Currency.USD, 923, 7500, 45, 200500000L);
 
 //         Users
         User user1 = new User(12983736256L, "Ivan", 223, 23, "Company1", 23000, bank1);

@@ -2,9 +2,7 @@ package core.module07.homework;
 
 import core.module04.homework.Currency;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,34 +20,49 @@ public class Main {
         Currency grn = Currency.UAH;
         Currency usd = Currency.USD;
 
-        Order order1 = new Order(34565, 500, grn, "Nokia 1100", "Rozetka", alex);
-        Order order2 = new Order(36437, 1000, usd, "Samsung Galaxy Note", "Rozetka", vano);
+        Order order1 = new Order(34565, 600, grn, "Nokia", "Rozetka", alex);
+        Order order2 = new Order(36437, 1000, usd, "Samsung", "CityCom", vano);
         Order order3 = new Order(67634, 1550, grn, "Samsung ", "Rozetka", pasha);
-        Order order4 = new Order(73236, 600, usd, "Bicycle", "Rozetka", pasha2);
+        Order order4 = new Order(73236, 600, usd, "Bicycle", "CityCom", pasha2);
         Order order12 = new Order(73236, 600, usd, "Bicycle", "Rozetka", pasha2);
-        Order order5 = new Order(79856, 1200, grn, "Prestigio Phone", "Rozetka", kate);
-        Order order6 = new Order(47838, 1500, usd, "Quaddrocopter", "Rozetka", kate2);
-        Order order7 = new Order(11873, 900, grn, "Notebook Dell", "Rozetka", olga);
-        Order order8 = new Order(68755, 8000, grn, "Notebook HP", "Rozetka", olga2);
-        Order order9 = new Order(12445, 400, usd, "Notebook Samsung", "Rozetka", serg);
-        Order order10 = new Order(97643, 26000, grn, "Notebook GameX", "Rozetka", serg2);
-        Order order11 = new Order(97643, 26000, grn, "Notebook GameX", "Rozetka", serg2);
+        Order order5 = new Order(79856, 1200, grn, "Nokia", "CityCom", kate);
+        Order order6 = new Order(47838, 1500, usd, "Samsung", "Rozetka", kate2);
+        Order order7 = new Order(11873, 900, grn, "Notebook", "Rozetka", olga);
+        Order order8 = new Order(68755, 8000, grn, "Notebook", "CityCom", olga2);
+        Order order9 = new Order(12445, 600, usd, "Notebook", "CityCom", serg);
+        Order order10 = new Order(97643, 26000, grn, "Notebook", "Rozetka", serg2);
+        Order order11 = new Order(97643, 26000, grn, "Notebook", "CityCom", serg2);
 
         List<Order> orders = new ArrayList<>();
-        orders.add(order1);
-        orders.add(order2);
-        orders.add(order3);
-        orders.add(order4);
-        orders.add(order12);
-        orders.add(order5);
-        orders.add(order6);
-        orders.add(order7);
-        orders.add(order8);
-        orders.add(order9);
-        orders.add(order10);
-        orders.add(order11);
-        System.out.println("source list:");
+        Collections.addAll(orders, order1,order2, order3, order4, order12, order5, order6, order7, order8, order9, order10, order11);
+        PrintSortResult(orders, "source list:");
+
+        orders.sort(new Comparator<Order>() {
+            @Override
+            public int compare(Order o1, Order o2) {
+                return o2.getPrice() - o1.getPrice();
+            }
+        });
+        PrintSortResult(orders, "sorted list by price in decrase order");
+
+        orders.sort(new SortByIncreasePriceAndCity());
+        PrintSortResult(orders, "sorted list by price and city");
+
+        orders.sort(new SortByItemShopCity());
+        PrintSortResult(orders, "sorted list by itemName and shopIdentificator and city");
+
+        //TODO
+//        Collection<Order> set1 = new Set<>();    //  ??????????
+        PrintSortResult(orders, "deleted duplicates in list");
+
+        //TODO
+        PrintSortResult(orders, "deleted items with price less then 1500");
+
+    }
+
+    public static void PrintSortResult(Collection<Order> orders, String s) {
+        System.out.println("---------------------------" + s + "---------------------------");
         System.out.println(orders);
-//        orders.sort(Comparator.comparing());
+        System.out.println();
     }
 }

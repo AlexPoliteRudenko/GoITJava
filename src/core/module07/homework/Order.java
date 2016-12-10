@@ -4,16 +4,6 @@ package core.module07.homework;
 import core.module04.homework.Currency;
 
 public class Order {
-    @Override
-    public String toString() {
-        return "\nOrder{" +
-                "id= " + id +
-                ", price=" + price + " " + currency +
-                ", itemName= '" + itemName + '\'' +
-                ", shopIdentificator= '" + shopIdentificator + '\'' +
-                ", " + user +
-                '}';
-    }
 
     private long id;
     private int price;
@@ -30,6 +20,16 @@ public class Order {
         this.shopIdentificator = shopIdentificator;
         this.user = user;
 
+    }
+    @Override
+    public String toString() {
+        return "\nOrder{" +
+                "id= " + id +
+                ", price=" + price + " " + currency +
+                ", itemName= '" + itemName + '\'' +
+                ", shopIdentificator= '" + shopIdentificator + '\'' +
+                ", " + user +
+                '}';
     }
 
     @Override
