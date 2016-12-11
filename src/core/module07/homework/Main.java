@@ -89,18 +89,18 @@ public class Main {
         PrintSortResult(set1, "deleted items with price less then 1500");*/
 
         //---------------------------------------------------------------------------------
-        Map<Currency, List<Order>> sepCurrency = seperateCurrency(orders);
+        Map<Currency, List<Order>> sepCurrency = separateCurrency(orders);
         System.out.println(sepCurrency.toString());
         System.out.println();
 
         //---------------------------------------------------------------------------------
-        Map<String, List<Order>> sepCity = seperateCity(orders);
+        Map<String, List<Order>> sepCity = separateCity(orders);
         System.out.println(sepCity.toString());
         System.out.println();
 
     }
 
-    private static Map<Currency, List<Order>> seperateCurrency(Collection<Order> orders) {
+    private static Map<Currency, List<Order>> separateCurrency(Collection<Order> orders) {
         Map<Currency, List<Order>> map = new HashMap<>();
         Iterator iter = orders.iterator();
         while (iter.hasNext()) {
@@ -117,7 +117,7 @@ public class Main {
 
         return map;
     }
-    private static Map<String, List<Order>> seperateCity(Collection<Order> orders) {
+    private static Map<String, List<Order>> separateCity(Collection<Order> orders) {
         Map<String, List<Order>> map = new HashMap<>();
         Iterator iter = orders.iterator();
         while (iter.hasNext()) {
