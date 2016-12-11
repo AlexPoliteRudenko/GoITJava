@@ -1,7 +1,7 @@
 package core.module05.homework;
 
 public abstract class APIAbstract implements API {
-    public Room[] rooms;
+    private Room[] rooms;
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
@@ -29,6 +29,10 @@ public abstract class APIAbstract implements API {
             }
         }
         return roomsFound;
+    }
+
+    public void setRooms(Room[] rooms) {
+        this.rooms = rooms;
     }
 
     public Room[] getRooms() {

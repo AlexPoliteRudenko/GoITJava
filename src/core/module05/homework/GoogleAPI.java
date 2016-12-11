@@ -8,12 +8,9 @@ public class GoogleAPI extends APIAbstract{
         roomsSet[2] = new Room(3988746375L, 500, 2, 2016, 12, 5, "Hilton", "Kyiv");
         roomsSet[3] = new Room(1118983847L, 350, 2, 2016, 12, 4, "Hyatt", "Kyiv");
         roomsSet[4] = new Room(3281946375L, 500, 1, 2016, 12, 15, "Hyatt", "Kyiv");
-        this.rooms = roomsSet;
+        this.setRooms(roomsSet);
 
     }
 
-    public void setRooms(Room[] rooms) {
-        this.rooms = rooms;
-    }
 
 }

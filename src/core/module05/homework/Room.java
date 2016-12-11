@@ -4,12 +4,12 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 public class Room {
-    long id;
-    int price;
-    int persons;
-    GregorianCalendar dateAvailableFrom;
-    String hotelName;
-    String cityName;
+    private long id;
+    private int price;
+    private int persons;
+    private GregorianCalendar dateAvailableFrom;
+    private String hotelName;
+    private String cityName;
 
     @Override
     public boolean equals(Object o) {

@@ -8,11 +8,7 @@ public class BookingComAPI extends APIAbstract {
         roomsSet[2] = new Room(1256446375L, 500, 1, 2016, 12, 3, "Hyatt", "Kyiv");
         roomsSet[3] = new Room(2345643847L, 400, 2, 2016, 12, 2, "Hyatt", "Kyiv");
         roomsSet[4] = new Room(3281946375L, 300, 1, 2016, 12, 1, "Hilton", "Kyiv");
-        this.rooms = roomsSet;
-    }
-
-    public void setRooms(Room[] rooms) {
-        this.rooms = rooms;
+        this.setRooms(roomsSet);
     }
 
 }
