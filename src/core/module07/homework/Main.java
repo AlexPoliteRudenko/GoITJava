@@ -23,7 +23,7 @@ public class Main {
         Order order1 = new Order(34565, 600, grn, "Nokia", "Rozetka", alex);
         Order order2 = new Order(36437, 1000, usd, "Samsung", "CityCom", vano);
         Order order3 = new Order(67634, 1550, grn, "Samsung ", "Rozetka", pasha);
-        Order order4 = new Order(73236, 600, usd, "Bicycle", "CityCom", pasha2);
+        Order order4 = new Order(73236, 600, usd, "Bicycle", "Rozetka", pasha2);
         Order order12 = new Order(73236, 600, usd, "Bicycle", "Rozetka", pasha2);
         Order order5 = new Order(79856, 1200, grn, "Nokia", "CityCom", kate);
         Order order6 = new Order(47838, 1500, usd, "Samsung", "Rozetka", kate2);
@@ -31,12 +31,14 @@ public class Main {
         Order order8 = new Order(68755, 8000, grn, "Notebook", "CityCom", olga2);
         Order order9 = new Order(12445, 600, usd, "Notebook", "CityCom", serg);
         Order order10 = new Order(97643, 26000, grn, "Notebook", "Rozetka", serg2);
-        Order order11 = new Order(97643, 26000, grn, "Notebook", "CityCom", serg2);
+        Order order11 = new Order(97643, 26000, grn, "Notebook", "Rozetka", serg2);
 
+        //---------------------------------------------------------------------------------
         List<Order> orders = new ArrayList<>();
         Collections.addAll(orders, order1,order2, order3, order4, order12, order5, order6, order7, order8, order9, order10, order11);
         PrintSortResult(orders, "source list:");
 
+        //---------------------------------------------------------------------------------
         orders.sort(new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
@@ -45,19 +47,56 @@ public class Main {
         });
         PrintSortResult(orders, "sorted list by price in decrase order");
 
+        //---------------------------------------------------------------------------------
         orders.sort(new SortByIncreasePriceAndCity());
         PrintSortResult(orders, "sorted list by price and city");
 
+        //---------------------------------------------------------------------------------
         orders.sort(new SortByItemShopCity());
         PrintSortResult(orders, "sorted list by itemName and shopIdentificator and city");
 
-        //TODO
-//        Collection<Order> set1 = new Set<>();    //  ??????????
-        PrintSortResult(orders, "deleted duplicates in list");
+        //---------------------------------------------------------------------------------
+        List<Order> ordersUnique = new ArrayList<>();
+        Iterator iter = orders.iterator();
+        while (iter.hasNext()) {
+            Order elem =(Order) iter.next();
+            if (!ordersUnique.contains(elem)) {
+                ordersUnique.add(elem);
+            }
+        }
+        PrintSortResult(ordersUnique, "deleted duplicates in list");
 
-        //TODO
-        PrintSortResult(orders, "deleted items with price less then 1500");
+        //---------------------------------------------------------------------------------
+        iter = ordersUnique.iterator();
+        while (iter.hasNext()) {
+            Order elem =(Order) iter.next();
+            if (elem.getPrice() < 1500) {
+                iter.remove();
+            }
+        }
+        PrintSortResult(ordersUnique, "deleted items with price less then 1500");
 
+        /*Collection<Order> set1 = new HashSet<>(orders);    //  It's working, but i'm not sure it's a good idea
+        PrintSortResult(set1, "deleted duplicates in list");
+
+        Iterator iter = set1.iterator();
+        while (iter.hasNext()) {
+            Order elem =(Order) iter.next();
+            if (elem.getPrice() < 1500) {
+                iter.remove();
+            }
+        }
+        PrintSortResult(set1, "deleted items with price less then 1500");*/
+
+
+        Map<Currency, Order> sep1 = seperateCurrency(orders);
+    }
+
+    private static Map<Currency, Order> seperateCurrency(Collection<Order> orders) {
+        Map<Currency, Order> map = new HashMap<>();
+
+
+        return null;
     }
 
     public static void PrintSortResult(Collection<Order> orders, String s) {

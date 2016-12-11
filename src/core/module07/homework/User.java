@@ -1,6 +1,6 @@
 package core.module07.homework;
 
-public class User {
+public class User implements Comparable<User> {
     private long id;
     private String firstName;
     private String lastName;
@@ -50,6 +50,22 @@ public class User {
         return result;
     }
 
+    @Override
+    public int compareTo(User o) {
+        if (this.getId() != o.getId()) {
+            return (int) (Math.abs(this.getId() - o.getId()) / (this.getId() - o.getId()));
+        } else if (this.getBalance() != o.getBalance()) {
+            return (int) (Math.abs(this.getBalance() - o.getBalance()) / (this.getBalance() - o.getBalance()));
+        } else if (this.getFirstName().compareTo(o.getFirstName()) != 0) {
+            return this.getFirstName().compareTo(o.getFirstName());
+        } else if (this.getLastName().compareTo(o.getLastName()) != 0) {
+            return this.getLastName().compareTo(o.getLastName());
+        } else if (this.getCity().compareTo(o.getCity()) != 0) {
+            return this.getCity().compareTo(o.getCity());
+        }
+        return 0;
+    }
+
     public long getId() {
         return id;
     }
@@ -89,4 +105,5 @@ public class User {
     public void setBalance(int balance) {
         this.balance = balance;
     }
+
 }

@@ -3,7 +3,7 @@ package core.module07.homework;
 
 import core.module04.homework.Currency;
 
-public class Order {
+public class Order implements Comparable<Order> {
 
     private long id;
     private int price;
@@ -21,6 +21,7 @@ public class Order {
         this.user = user;
 
     }
+
     @Override
     public String toString() {
         return "\nOrder{" +
@@ -58,6 +59,25 @@ public class Order {
         result = 31 * result + (getUser() != null ? getUser().hashCode() : 0);
         return result;
     }
+
+    @Override
+    public int compareTo(Order o) {
+        if (this.getPrice() != o.getPrice()) {
+            return (int) (Math.abs(this.getPrice() - o.getPrice()) / (this.getPrice() - o.getPrice()));
+        } else if (this.getId() != o.getId()) {
+            return (int) (Math.abs(this.getId() - o.getId()) / (this.getId() - o.getId()));
+        } else if (this.getItemName().compareTo(o.getItemName()) != 0) {
+            return this.getItemName().compareTo(o.getItemName());
+        } else if (this.getShopIdentificator().compareTo(o.getShopIdentificator()) != 0) {
+            return this.getShopIdentificator().compareTo(o.getShopIdentificator());
+        } else if (this.getCurrency().compareTo(o.getCurrency()) != 0) {
+            return this.getCurrency().compareTo(o.getCurrency());
+        } else if (this.getUser().compareTo(o.getUser()) != 0) {
+            return this.getUser().compareTo(o.getUser());
+        }
+        return 0;
+    }
+
 
     public long getId() {
         return id;
