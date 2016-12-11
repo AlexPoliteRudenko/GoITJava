@@ -88,15 +88,51 @@ public class Main {
         }
         PrintSortResult(set1, "deleted items with price less then 1500");*/
 
+        //---------------------------------------------------------------------------------
+        Map<Currency, List<Order>> sepCurrency = seperateCurrency(orders);
+        System.out.println(sepCurrency.toString());
+        System.out.println();
 
-        Map<Currency, Order> sep1 = seperateCurrency(orders);
+        //---------------------------------------------------------------------------------
+        Map<String, List<Order>> sepCity = seperateCity(orders);
+        System.out.println(sepCity.toString());
+        System.out.println();
+
     }
 
-    private static Map<Currency, Order> seperateCurrency(Collection<Order> orders) {
-        Map<Currency, Order> map = new HashMap<>();
+    private static Map<Currency, List<Order>> seperateCurrency(Collection<Order> orders) {
+        Map<Currency, List<Order>> map = new HashMap<>();
+        Iterator iter = orders.iterator();
+        while (iter.hasNext()) {
+            Order elem =(Order) iter.next();
+            if (map.containsKey(elem.getCurrency())) {
+                List<Order> list = map.get(elem.getCurrency());
+                list.add(elem);
+            } else {
+                List<Order> list = new ArrayList<>();
+                list.add(elem);
+                map.put(elem.getCurrency(),list);
+            }
+        }
 
+        return map;
+    }
+    private static Map<String, List<Order>> seperateCity(Collection<Order> orders) {
+        Map<String, List<Order>> map = new HashMap<>();
+        Iterator iter = orders.iterator();
+        while (iter.hasNext()) {
+            Order elem =(Order) iter.next();
+            if (map.containsKey(elem.getUser().getCity())) {
+                List<Order> list = map.get(elem.getUser().getCity());
+                list.add(elem);
+            } else {
+                List<Order> list = new ArrayList<>();
+                list.add(elem);
+                map.put(elem.getUser().getCity(),list);
+            }
+        }
 
-        return null;
+        return map;
     }
 
     public static void PrintSortResult(Collection<Order> orders, String s) {
