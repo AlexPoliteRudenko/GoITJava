@@ -1,10 +1,4 @@
-package core.module05.Practice;
-
-import com.sun.xml.internal.ws.util.StringUtils;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.stream.IntStream;
+package core.module05.practice;
 
 public class RemoveSymbol {
     public static void main(String[] args) {

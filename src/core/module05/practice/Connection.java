@@ -1,4 +1,4 @@
-package core.module05.Practice;
+package core.module05.practice;
 
 public class Connection {
     String urlConnetion;
