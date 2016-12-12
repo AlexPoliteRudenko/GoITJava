@@ -39,9 +39,9 @@ public class Main {
 
         Task2.solution(orders);
 
-        Set<Order> set1 = new TreeSet<>();
-        Collections.addAll(set1, order1, order2, order3, order4, order12, order5, order6, order7, order8, order9, order10, order11);
+        Set<Order> set = new TreeSet<>();
+        Collections.addAll(set, order1, order2, order3, order4, order12, order5, order6, order7, order8, order9, order10, order11);
 
-        Task3.solution(set1);
+        Task3.solution(set);
     }
 }

@@ -26,9 +26,8 @@ public class Main {
 
         System.out.println("Processing with DB:");
         Room room;
-        //TODO
 //        room = control.save(apiArray[0].);
-        result = control.dataBase.getAll();
+        result = control.getDataBase().getAll();
         System.out.println(Arrays.toString(result));
 
     }

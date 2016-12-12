@@ -1,8 +1,8 @@
 package core.module05.homework;
 
 public class Controller {
-    API[] apis = new API[3];
-    DAOImpl dataBase = new DAOImpl();
+    private API[] apis = new API[3];
+    private DAOImpl dataBase = new DAOImpl();
     Controller() {
         this.apis[0] = new BookingComAPI();
         this.apis[1] = new GoogleAPI();
@@ -67,6 +67,14 @@ public class Controller {
     Room findById(long id) {
 
         return dataBase.findById(id);
+    }
+
+    public DAOImpl getDataBase() {
+        return dataBase;
+    }
+
+    public void setDataBase(DAOImpl dataBase) {
+        this.dataBase = dataBase;
     }
 
     public API[] getApis() {

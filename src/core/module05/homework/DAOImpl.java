@@ -1,7 +1,7 @@
 package core.module05.homework;
 
 public class DAOImpl implements DAO {
-    Room[] db = new Room[1];
+    private Room[] db = new Room[1];
 
     @Override
     public Room save(Room room) {
