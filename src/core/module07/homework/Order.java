@@ -62,18 +62,18 @@ public class Order implements Comparable<Order> {
 
     @Override
     public int compareTo(Order o) {
-        if (this.getPrice() != o.getPrice()) {
-            return (int) (Math.abs(this.getPrice() - o.getPrice()) / (this.getPrice() - o.getPrice()));
-        } else if (this.getId() != o.getId()) {
-            return (int) (Math.abs(this.getId() - o.getId()) / (this.getId() - o.getId()));
-        } else if (this.getItemName().compareTo(o.getItemName()) != 0) {
-            return this.getItemName().compareTo(o.getItemName());
-        } else if (this.getShopIdentificator().compareTo(o.getShopIdentificator()) != 0) {
-            return this.getShopIdentificator().compareTo(o.getShopIdentificator());
-        } else if (this.getCurrency().compareTo(o.getCurrency()) != 0) {
-            return this.getCurrency().compareTo(o.getCurrency());
-        } else if (this.getUser().compareTo(o.getUser()) != 0) {
-            return this.getUser().compareTo(o.getUser());
+        if (getPrice() != o.getPrice()) {
+            return (int) (Math.abs(getPrice() - o.getPrice()) / (getPrice() - o.getPrice()));
+        } else if (getId() != o.getId()) {
+            return (int) (Math.abs(getId() - o.getId()) / (getId() - o.getId()));
+        } else if (getItemName().compareTo(o.getItemName()) != 0) {
+            return getItemName().compareTo(o.getItemName());
+        } else if (getShopIdentificator().compareTo(o.getShopIdentificator()) != 0) {
+            return getShopIdentificator().compareTo(o.getShopIdentificator());
+        } else if (getCurrency().compareTo(o.getCurrency()) != 0) {
+            return getCurrency().compareTo(o.getCurrency());
+        } else if (getUser().compareTo(o.getUser()) != 0) {
+            return getUser().compareTo(o.getUser());
         }
         return 0;
     }

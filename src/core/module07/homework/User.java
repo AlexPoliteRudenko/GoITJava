@@ -52,16 +52,16 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        if (this.getId() != o.getId()) {
-            return (int) (Math.abs(this.getId() - o.getId()) / (this.getId() - o.getId()));
+        if (getId() != o.getId()) {
+            return (int) (Math.abs(getId() - o.getId()) / (getId() - o.getId()));
         } else if (this.getBalance() != o.getBalance()) {
-            return (int) (Math.abs(this.getBalance() - o.getBalance()) / (this.getBalance() - o.getBalance()));
-        } else if (this.getFirstName().compareTo(o.getFirstName()) != 0) {
-            return this.getFirstName().compareTo(o.getFirstName());
-        } else if (this.getLastName().compareTo(o.getLastName()) != 0) {
-            return this.getLastName().compareTo(o.getLastName());
-        } else if (this.getCity().compareTo(o.getCity()) != 0) {
-            return this.getCity().compareTo(o.getCity());
+            return (int) (Math.abs(getBalance() - o.getBalance()) / (getBalance() - o.getBalance()));
+        } else if (getFirstName().compareTo(o.getFirstName()) != 0) {
+            return getFirstName().compareTo(o.getFirstName());
+        } else if (getLastName().compareTo(o.getLastName()) != 0) {
+            return getLastName().compareTo(o.getLastName());
+        } else if (getCity().compareTo(o.getCity()) != 0) {
+            return getCity().compareTo(o.getCity());
         }
         return 0;
     }
