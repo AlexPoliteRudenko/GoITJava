@@ -46,13 +46,17 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        String name = getLastName() + getFirstName();
-        String nameO = o.getLastName() + o.getFirstName();
+        /*String name = getFirstName();
+        String surName = getLastName();
+        String nameO = getFirstName();
+        String surNameO = o.getLastName();
         if (name.compareTo(nameO) != 0) {
             return name.compareTo(nameO);
-        } else if ((this.age - o.age) != 0) {
+        } else if (surName.compareTo(surNameO) != 0) {
+            return surName.compareTo(surNameO);
+        } else {
             return this.age - o.age;
-        }
-            return 0;
+        }*/
+            return this.age - o.age;
     }
 }

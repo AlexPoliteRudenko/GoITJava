@@ -1,11 +1,13 @@
 package core.module07.homework.Task4;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Main {
-    public static void main(String[] args) {
+public class Task4 {
+    public static void solution() {
+        System.out.println();
+        System.out.println("---------------------------task 4---------------------------");
+        System.out.println();
         List<Room> result = new ArrayList<>();
         System.out.println("Search room:");
         Controller control = new Controller();
@@ -31,8 +33,10 @@ public class Main {
 //        room = control.save(apiArray.get(0).);
         result = control.getDataBase().getAll();
         System.out.println(result);
-
+        System.out.println();
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println("=========================== End of task 4===========================");
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println();
     }
-
 }
-

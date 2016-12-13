@@ -6,6 +6,9 @@ import java.util.*;
 
 public class Task2 {
     public static void solution(List<Order> orders) {
+        System.out.println();
+        System.out.println("---------------------------task 2---------------------------");
+        System.out.println();
         //---------------------------------------------------------------------------------
         PrintSortResult(orders, "source list:");
 

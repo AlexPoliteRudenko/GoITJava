@@ -1,6 +1,7 @@
 package core.module07.homework;
 
 import core.module04.homework.Currency;
+import core.module07.homework.Task4.Task4;
 
 import java.util.*;
 
@@ -43,5 +44,8 @@ public class Main {
         Collections.addAll(set, order1, order2, order3, order4, order12, order5, order6, order7, order8, order9, order10, order11);
 
         Task3.solution(set);
+
+        Task4.solution();
+        Task5.solution();
     }
 }

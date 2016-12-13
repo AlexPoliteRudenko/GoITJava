@@ -3,7 +3,7 @@ package core.module03.homework.task3_3;
 import java.util.GregorianCalendar;
 
 public class Solution {
-    //    Solution for task 3.3
+    //    solution for task 3.3
     GregorianCalendar startDate1 = new GregorianCalendar(2016, 7, 20);
     GregorianCalendar startDate2 = new GregorianCalendar(2016, 9, 20);
     GregorianCalendar startDate3 = new GregorianCalendar(2016, 11, 2);

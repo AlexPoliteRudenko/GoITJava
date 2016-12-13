@@ -6,6 +6,9 @@ import java.util.*;
 
 public class Task3 {
     public static void solution(Set<Order> set1) {
+        System.out.println();
+        System.out.println("---------------------------task 3---------------------------");
+        System.out.println();
         Task2.PrintSortResult(set1, "source set");
 
         System.out.print("Checking, weather set contain order with user \'Petrov\': ");
