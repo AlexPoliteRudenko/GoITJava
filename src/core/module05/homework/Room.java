@@ -11,6 +11,15 @@ public class Room {
     private String hotelName;
     private String cityName;
 
+    public Room(long id, int price, int persons, int fromYear, int fromMonth, int fromDate, String hotelName, String cityName) {
+        this.id = id;
+        this.price = price;
+        this.persons = persons;
+        this.dateAvailableFrom = new GregorianCalendar(fromYear, fromMonth, fromDate);
+        this.hotelName = hotelName;
+        this.cityName = cityName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,15 +47,6 @@ public class Room {
         result = 31 * result + (getHotelName() != null ? getHotelName().hashCode() : 0);
         result = 31 * result + (getCityName() != null ? getCityName().hashCode() : 0);
         return result;
-    }
-
-    public Room(long id, int price, int persons, int fromYear, int fromMonth, int fromDate, String hotelName, String cityName) {
-        this.id = id;
-        this.price = price;
-        this.persons = persons;
-        this.dateAvailableFrom = new GregorianCalendar(fromYear, fromMonth, fromDate);
-        this.hotelName = hotelName;
-        this.cityName = cityName;
     }
 
     @Override
