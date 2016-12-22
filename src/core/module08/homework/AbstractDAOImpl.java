@@ -3,7 +3,7 @@ package core.module08.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractDAOImpl<T extends AbstractEntity> implements AbstractDAO<T> {
+public abstract class AbstractDAOImpl<T> implements AbstractDAO<T> {
     private List<T> list = new ArrayList<>();
     @Override
     public T save(T t) {
