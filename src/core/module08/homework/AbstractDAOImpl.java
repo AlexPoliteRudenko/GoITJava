@@ -3,7 +3,7 @@ package core.module08.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractDAOImpl<T> implements AbstractDAO<T> {
+public abstract class AbstractDAOImpl<T extends AbstractEntity> implements AbstractDAO<T> {
     private List<T> list = new ArrayList<>();
     @Override
     public T save(T t) {
@@ -17,17 +17,20 @@ public abstract class AbstractDAOImpl<T> implements AbstractDAO<T> {
     }
 
     @Override
-    public void deleteAll(List<T> tList) {
+    public void deleteAll(List<? extends T> tList) {
         list.removeAll(tList);
     }
 
     @Override
-    public void saveAll(List<T> tList) {
+    public void saveAll(List<? extends T> tList) {
         list.addAll(tList);
+        if (!tList.isEmpty()) {
+
+        }
     }
 
     @Override
-    public List<T> getList() {
+    public List<? extends T> getList() {
         return this.list;
     }
 }
