@@ -8,6 +8,6 @@ public interface AbstractDAO<T extends AbstractEntity> {
     void deleteAll(List <? extends T> tList);
     void saveAll(List <? extends T> tList);
     List <? extends T> getList();
-    void daleteById(long id);
+    void deleteById(long id);
     T get(long id);
 }

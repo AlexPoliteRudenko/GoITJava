@@ -5,11 +5,11 @@ import java.util.Iterator;
 public class UserDAO<T extends AbstractEntity> extends AbstractDAOImpl<T> {
 
     @Override
-    public void daleteById(long id) {
+    public void deleteById(long id) {
         Iterator iterator = getList().iterator();
         while (iterator.hasNext()) {
             T t =(T) iterator.next();
-            if (t.id == id) {
+            if (t.getId() == id) {
                 iterator.remove();
             }
         }
@@ -18,7 +18,7 @@ public class UserDAO<T extends AbstractEntity> extends AbstractDAOImpl<T> {
     @Override
     public T get(long id) {
         for (T t : getList()) {
-            if (t.id == id) {
+            if (t.getId() == id) {
                 return t;
             }
         }
