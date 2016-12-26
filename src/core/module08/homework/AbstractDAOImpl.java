@@ -24,9 +24,6 @@ public abstract class AbstractDAOImpl<T extends AbstractEntity> implements Abstr
     @Override
     public void saveAll(List<? extends T> tList) {
         list.addAll(tList);
-        if (!tList.isEmpty()) {
-
-        }
     }
 
     @Override
