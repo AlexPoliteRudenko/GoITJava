@@ -51,11 +51,14 @@ public class Main {
         PrintSortResult(orders, "sorted list by price in decrase order");
 
         //---------------------------------------------------------------------------------
-        orders.sort(Comparator.comparing(Order::getPrice).thenComparing(o -> o.getUser().getCity()));
+        orders.sort(Comparator.comparing(Order::getPrice).
+                thenComparing(o -> o.getUser().getCity()));
         PrintSortResult(orders, "sorted list by price and city");
 
         //---------------------------------------------------------------------------------
-        orders.sort(Comparator.comparing(Order::getItemName).thenComparing(Order::getShopIdentificator).thenComparing(o -> o.getUser().getCity()));
+        orders.sort(Comparator.comparing(Order::getItemName).
+                thenComparing(Order::getShopIdentificator).
+                thenComparing(o -> o.getUser().getCity()));
         PrintSortResult(orders, "sorted list by itemName and shopIdentificator and city");
 
         //---------------------------------------------------------------------------------
@@ -63,7 +66,8 @@ public class Main {
         PrintSortResult(ordersUnique, "deleted duplicates in list");
 
         //---------------------------------------------------------------------------------
-        List<Order> ordersLess1500 = ordersUnique.stream().filter(order -> order.getPrice() < 1500).collect(Collectors.toList());
+        List<Order> ordersLess1500 = ordersUnique.stream().
+                filter(order -> order.getPrice() < 1500).collect(Collectors.toList());
         PrintSortResult(ordersLess1500, "deleted items with price less then 1500");
 
         //---------------------------------------------------------------------------------
@@ -74,7 +78,17 @@ public class Main {
         //---------------------------------------------------------------------------------
         Map<String, List<Order>> sepCity = orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity()));
         System.out.println(sepCity.toString());
-
+        System.out.println();
+        //---------------------------------------------------------------------------------
+        System.out.println("The set" +
+                (orders.stream().anyMatch(order -> order.getUser().getLastName().equals("Petrov")) ? "" : "does not") +
+                " contains order (s) with users with last name Petrov");
+        System.out.println();
+        //---------------------------------------------------------------------------------
+        List<Order> ordersWithoutUSD = orders.stream().
+                filter(order -> !order.getCurrency().equals(Currency.USD)).collect(Collectors.toList());
+        PrintSortResult(ordersWithoutUSD, "deleted items with Currency USD");
+        //---------------------------------------------------------------------------------
         System.out.println();
         System.out.println("--------------------------------------------------------------------");
         System.out.println("=========================== End of task ===========================");

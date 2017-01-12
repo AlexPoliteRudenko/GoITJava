@@ -37,24 +37,12 @@ public class Task2 {
         Iterator iter = orders.iterator();
         iter = ordersUnique.iterator();
         while (iter.hasNext()) {
-            Order elem =(Order) iter.next();
+            Order elem = (Order) iter.next();
             if (elem.getPrice() < 1500) {
                 iter.remove();
             }
         }
         PrintSortResult(ordersUnique, "deleted items with price less then 1500");
-
-        /*Collection<Order> set1 = new HashSet<>(orders);    //  It's working, but i'm not sure it's a good idea
-        PrintSortResult(set1, "deleted duplicates in list");
-
-        Iterator iter = set1.iterator();
-        while (iter.hasNext()) {
-            Order elem =(Order) iter.next();
-            if (elem.getPrice() < 1500) {
-                iter.remove();
-            }
-        }
-        PrintSortResult(set1, "deleted items with price less then 1500");*/
 
         //---------------------------------------------------------------------------------
         Map<Currency, List<Order>> sepCurrency = separateCurrency(orders);
@@ -64,6 +52,21 @@ public class Task2 {
         //---------------------------------------------------------------------------------
         Map<String, List<Order>> sepCity = separateCity(orders);
         System.out.println(sepCity.toString());
+
+        //---------------------------------------------------------------------------------
+        iter = orders.iterator();
+        boolean containsPetrov = false;
+        while (iter.hasNext()) {
+            Order o = (Order) iter.next();
+            if (o.getUser().getLastName().equals("Petrov")) {
+                containsPetrov = true;
+            }
+        }
+        System.out.println("The set" + (containsPetrov ? "" : " does not") + " contains order with user's last name Petrov");
+
+        //---------------------------------------------------------------------------------
+
+        //---------------------------------------------------------------------------------
 
         System.out.println();
         System.out.println("--------------------------------------------------------------------");
@@ -77,31 +80,32 @@ public class Task2 {
         Map<Currency, List<Order>> map = new HashMap<>();
         Iterator iter = orders.iterator();
         while (iter.hasNext()) {
-            Order elem =(Order) iter.next();
+            Order elem = (Order) iter.next();
             if (map.containsKey(elem.getCurrency())) {
                 List<Order> list = map.get(elem.getCurrency());
                 list.add(elem);
             } else {
                 List<Order> list = new ArrayList<>();
                 list.add(elem);
-                map.put(elem.getCurrency(),list);
+                map.put(elem.getCurrency(), list);
             }
         }
 
         return map;
     }
+
     private static Map<String, List<Order>> separateCity(Collection<Order> orders) {
         Map<String, List<Order>> map = new HashMap<>();
         Iterator iter = orders.iterator();
         while (iter.hasNext()) {
-            Order elem =(Order) iter.next();
+            Order elem = (Order) iter.next();
             if (map.containsKey(elem.getUser().getCity())) {
                 List<Order> list = map.get(elem.getUser().getCity());
                 list.add(elem);
             } else {
                 List<Order> list = new ArrayList<>();
                 list.add(elem);
-                map.put(elem.getUser().getCity(),list);
+                map.put(elem.getUser().getCity(), list);
             }
         }
 
