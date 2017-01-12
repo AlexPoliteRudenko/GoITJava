@@ -54,19 +54,6 @@ public class Task2 {
         System.out.println(sepCity.toString());
 
         //---------------------------------------------------------------------------------
-        iter = orders.iterator();
-        boolean containsPetrov = false;
-        while (iter.hasNext()) {
-            Order o = (Order) iter.next();
-            if (o.getUser().getLastName().equals("Petrov")) {
-                containsPetrov = true;
-            }
-        }
-        System.out.println("The set" + (containsPetrov ? "" : " does not") + " contains order with user's last name Petrov");
-
-        //---------------------------------------------------------------------------------
-
-        //---------------------------------------------------------------------------------
 
         System.out.println();
         System.out.println("--------------------------------------------------------------------");
