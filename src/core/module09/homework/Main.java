@@ -3,10 +3,7 @@ package core.module09.homework;
 import core.module04.homework.Currency;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
-import static core.module07.homework.Task2.PrintSortResult;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,61 +37,83 @@ public class Main {
         List<Order> orders = new ArrayList<>();
         Collections.addAll(orders, order1, order2, order3, order4, order12, order5, order6, order7, order8, order9, order10, order11);
 
-        System.out.println();
-        System.out.println("---------------------------task 2---------------------------");
-        System.out.println();
         //---------------------------------------------------------------------------------
         PrintSortResult(orders, "source list:");
 
         //---------------------------------------------------------------------------------
-        orders.sort((o1, o2) -> o2.getPrice() - o1.getPrice());
+        sortByPrice(orders);
         PrintSortResult(orders, "sorted list by price in decrase order");
 
         //---------------------------------------------------------------------------------
-        orders.sort(Comparator.comparing(Order::getPrice).
-                thenComparing(o -> o.getUser().getCity()));
+        sortByPriceAndCity(orders);
         PrintSortResult(orders, "sorted list by price and city");
 
         //---------------------------------------------------------------------------------
-        orders.sort(Comparator.comparing(Order::getItemName).
-                thenComparing(Order::getShopIdentificator).
-                thenComparing(o -> o.getUser().getCity()));
+        sortByItemThenShopThenCity(orders);
         PrintSortResult(orders, "sorted list by itemName and shopIdentificator and city");
 
         //---------------------------------------------------------------------------------
-        List<Order> ordersUnique = orders.stream().distinct().collect(Collectors.toList());
-        PrintSortResult(ordersUnique, "deleted duplicates in list");
+        PrintSortResult(getUniqueOrders(orders), "deleted duplicates in list");
 
         //---------------------------------------------------------------------------------
-        List<Order> ordersLess1500 = ordersUnique.stream().
-                filter(order -> order.getPrice() < 1500).collect(Collectors.toList());
-        PrintSortResult(ordersLess1500, "deleted items with price less then 1500");
+        PrintSortResult(getOrdersLess1500(orders), "deleted items with price less then 1500");
 
         //---------------------------------------------------------------------------------
-        Map<Currency, List<Order>> sepCurrency = orders.stream().collect(Collectors.groupingBy(Order::getCurrency));
-        System.out.println(sepCurrency.toString());
+        System.out.println(getCurrencyListMap(orders).toString());
         System.out.println();
 
         //---------------------------------------------------------------------------------
-        Map<String, List<Order>> sepCity = orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity()));
-        System.out.println(sepCity.toString());
+        System.out.println(getCityListMap(orders).toString());
         System.out.println();
         //---------------------------------------------------------------------------------
-        System.out.println("The set" +
-                (orders.stream().anyMatch(order -> order.getUser().getLastName().equals("Petrov")) ? "" : "does not") +
+
+        System.out.println("List" +
+                (listHasUsersLastName(orders, "Petrov") ? "" : " does not") +
                 " contains order (s) with users with last name Petrov");
         System.out.println();
         //---------------------------------------------------------------------------------
-        List<Order> ordersWithoutUSD = orders.stream().
-                filter(order -> !order.getCurrency().equals(Currency.USD)).collect(Collectors.toList());
-        PrintSortResult(ordersWithoutUSD, "deleted items with Currency USD");
-        //---------------------------------------------------------------------------------
-        System.out.println();
-        System.out.println("--------------------------------------------------------------------");
-        System.out.println("=========================== End of task ===========================");
-        System.out.println("--------------------------------------------------------------------");
-        System.out.println();
+        PrintSortResult(getOrdersWithoutCurrency(orders, Currency.USD), "deleted items with Currency USD");
+    }
 
+    public static List<Order> getOrdersWithoutCurrency(List<Order> orders, Currency cur) {
+        return orders.stream().
+                    filter(order -> !order.getCurrency().equals(cur)).collect(Collectors.toList());
+    }
+
+    public static boolean listHasUsersLastName(List<Order> orders, String petrov) {
+        return orders.stream().anyMatch(order -> order.getUser().getLastName().equals(petrov));
+    }
+
+    public static Map<String, List<Order>> getCityListMap(List<Order> orders) {
+        return orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity()));
+    }
+
+    public static Map<Currency, List<Order>> getCurrencyListMap(List<Order> orders) {
+        return orders.stream().collect(Collectors.groupingBy(Order::getCurrency));
+    }
+
+    public static List<Order> getOrdersLess1500(List<Order> ordersUnique) {
+        return ordersUnique.stream().
+                    filter(order -> order.getPrice() < 1500).collect(Collectors.toList());
+    }
+
+    public static List<Order> getUniqueOrders(List<Order> orders) {
+        return orders.stream().distinct().collect(Collectors.toList());
+    }
+
+    public static void sortByItemThenShopThenCity(List<Order> orders) {
+        orders.sort(Comparator.comparing(Order::getItemName).
+                thenComparing(Order::getShopIdentificator).
+                thenComparing(o -> o.getUser().getCity()));
+    }
+
+    public static void sortByPriceAndCity(List<Order> orders) {
+        orders.sort(Comparator.comparing(Order::getPrice).
+                thenComparing(o -> o.getUser().getCity()));
+    }
+
+    public static void sortByPrice(List<Order> orders) {
+        orders.sort((o1, o2) -> o2.getPrice() - o1.getPrice());
     }
 
     public static void PrintSortResult(Collection<Order> orders, String s) {
