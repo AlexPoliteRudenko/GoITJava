@@ -76,6 +76,7 @@ public class Main {
     }
 
     public static List<Order> getOrdersWithoutCurrency(List<Order> orders, Currency cur) {
+//        orders.removeIf(order -> order.getCurrency().equals(cur));   it's working, but I couldn't decide what method is better.
         return orders.stream().
                     filter(order -> !order.getCurrency().equals(cur)).collect(Collectors.toList());
     }
