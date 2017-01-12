@@ -20,9 +20,9 @@ public class Solution {
         Course[] coursesTaken = new Course[5];
         coursesTaken[0] = new Course(startDate5, "Course 6");
         coursesTaken[1] = course1;
-        coursesTaken[1] = course2;
-        coursesTaken[1] = course3;
-        coursesTaken[1] = course4;
+        coursesTaken[2] = course2;
+        coursesTaken[3] = course3;
+        coursesTaken[4] = course4;
         Student student1 = new Student("Alex", "Rudenko", 9);
         Student student2 = new Student("Rudenko", coursesTaken);
 

@@ -30,17 +30,11 @@ public class Task2 {
         PrintSortResult(orders, "sorted list by itemName and shopIdentificator and city");
 
         //---------------------------------------------------------------------------------
-        List<Order> ordersUnique = new ArrayList<>();
-        Iterator iter = orders.iterator();
-        while (iter.hasNext()) {
-            Order elem =(Order) iter.next();
-            if (!ordersUnique.contains(elem)) {
-                ordersUnique.add(elem);
-            }
-        }
+        List<Order> ordersUnique = new ArrayList<>(new HashSet<>(orders));
         PrintSortResult(ordersUnique, "deleted duplicates in list");
 
         //---------------------------------------------------------------------------------
+        Iterator iter = orders.iterator();
         iter = ordersUnique.iterator();
         while (iter.hasNext()) {
             Order elem =(Order) iter.next();
