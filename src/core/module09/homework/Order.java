@@ -49,16 +49,16 @@ public class Order implements Comparable<Order> {
 
     }
 
-    @Override
-    public int hashCode() {
-        int result = (int) (getId() ^ (getId() >>> 32));
-        result = 31 * result + getPrice();
-        result = 31 * result + getCurrency().hashCode();
-        result = 31 * result + getItemName().hashCode();
-        result = 31 * result + getShopIdentificator().hashCode();
-        result = 31 * result + (getUser() != null ? getUser().hashCode() : 0);
-        return result;
-    }
+//    @Override
+//    public int hashCode() {
+//        int result = (int) (getId() ^ (getId() >>> 32));
+//        result = 31 * result + getPrice();
+//        result = 31 * result + getCurrency().hashCode();
+//        result = 31 * result + getItemName().hashCode();
+//        result = 31 * result + getShopIdentificator().hashCode();
+//        result = 31 * result + (getUser() != null ? getUser().hashCode() : 0);
+//        return result;
+//    }
 
     @Override
     public int compareTo(Order o) {
