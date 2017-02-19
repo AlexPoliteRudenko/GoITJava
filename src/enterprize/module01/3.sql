@@ -1,0 +1,1 @@
+SELECT sum(salary) AllDevSalary FROM developers;
