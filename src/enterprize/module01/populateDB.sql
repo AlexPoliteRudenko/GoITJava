@@ -13,26 +13,33 @@ INSERT INTO projects VALUES (NULL, 'Java', 2);
 INSERT INTO projects VALUES (NULL, 'Photoshop', 2);
 INSERT INTO projects VALUES (NULL, 'Windows', 1);
 INSERT INTO projects VALUES (NULL, 'Note', 3);
+INSERT INTO projects VALUES (NULL, 'Galaxy', 1);
+INSERT INTO projects VALUES (NULL, 'Office', 3);
+INSERT INTO projects VALUES (NULL, 'MySQL', 2);
+INSERT INTO projects VALUES (NULL, 'MacBook', 1);
+INSERT INTO projects VALUES (NULL, 'PDF Reader', 1);
 
-INSERT INTO developers VALUES (NULL, 'Alex', 'Rudenko', 'test@mail.ru', 2, 3);
-INSERT INTO developers VALUES (NULL, 'Vasya', 'Pupkin', 'pup@mail.ru', 1, 2);
+INSERT INTO developers VALUES (NULL, 'Alex', 'Rudenko', 'test@mail.ru', 7, 1);
+INSERT INTO developers VALUES (NULL, 'Vasya', 'Pupkin', 'pup@mail.ru', 9, 2);
 INSERT INTO developers VALUES (NULL, 'Volodymyr', 'Kryshtalov', '1@mail.ru', 3, 4);
-INSERT INTO developers VALUES (NULL, 'Ivan', 'Ivanov', 'ivanov@mail.ru', 5, 5);
-INSERT INTO developers VALUES (NULL, 'Igor', 'Novak', 'novak@mail.ru', 2, 3);
+INSERT INTO developers VALUES (NULL, 'Ivan', 'Ivanov', 'ivanov@mail.ru', 9, 2);
+INSERT INTO developers VALUES (NULL, 'Igor', 'Novak', 'novak@mail.ru', 8, 3);
 INSERT INTO developers VALUES (NULL, 'Tanya', 'Kohan', 'test1@mail.ru', 2, 3);
 INSERT INTO developers VALUES (NULL, 'Ivan', 'Povar', 'test2@mail.ru', 2, 3);
 INSERT INTO developers VALUES (NULL, 'Denys', 'Kolem', 'test3@mail.ru', 1, 2);
 INSERT INTO developers VALUES (NULL, 'Illya', 'Nirenko', 'test4@mail.ru', 1, 2);
-INSERT INTO developers VALUES (NULL, 'Taras', 'Stepanenko', 'test5@mail.ru', 1, 2);
-INSERT INTO developers VALUES (NULL, 'John', 'Ovcharenko', 'test6@mail.ru', 3, 4);
+INSERT INTO developers VALUES (NULL, 'Taras', 'Stepanenko', 'test5@mail.ru', 7, 1);
+INSERT INTO developers VALUES (NULL, 'John', 'Ovcharenko', 'test6@mail.ru', 8, 3);
 INSERT INTO developers VALUES (NULL, 'Semen', 'Nochovniy', 'test7@mail.ru', 3, 4);
 INSERT INTO developers VALUES (NULL, 'Kate', 'Rudenko', 'test8@mail.ru', 3, 4);
 INSERT INTO developers VALUES (NULL, 'Nonna', 'Pogoreliy', 'test9@mail.ru', 4, 1);
 INSERT INTO developers VALUES (NULL, 'Alexandr', 'Korenniy', 'test0@mail.ru', 4, 1);
-INSERT INTO developers VALUES (NULL, 'Vova', 'Turenko', 'testtest@mail.ru', 4, 1);
+INSERT INTO developers VALUES (NULL, 'Vova', 'Turenko', 'testtest@mail.ru', 6, 5);
 INSERT INTO developers VALUES (NULL, 'Bogdan', 'Lomak', 'testtest1@mail.ru', 5, 5);
 INSERT INTO developers VALUES (NULL, 'Milena', 'Kovrov', 'testtest2@mail.ru', 5, 5);
-INSERT INTO developers VALUES (NULL, 'Michael', 'Komaroff', 'testtest3@mail.ru', 5, 5);
+INSERT INTO developers VALUES (NULL, 'Michael', 'Komaroff', 'testtest3@mail.ru', 6, 5);
+INSERT INTO developers VALUES (NULL, 'Sophie', 'Hom', 'testtest4@mail.ru', 10, 4);
+INSERT INTO developers VALUES (NULL, 'Julia', 'Roberts', 'testtest5@mail.ru', 10, 4);
 
 
 INSERT INTO skills VALUES (NULL, 'Java 8');
@@ -186,3 +193,17 @@ INSERT INTO developers_skills VALUES (18, 15);
 
 INSERT INTO developers_skills VALUES (19, 14);
 INSERT INTO developers_skills VALUES (19, 15);
+
+INSERT INTO developers_skills VALUES (21, 2);
+INSERT INTO developers_skills VALUES (21, 3);
+INSERT INTO developers_skills VALUES (21, 9);
+INSERT INTO developers_skills VALUES (21, 11);
+INSERT INTO developers_skills VALUES (21, 14);
+
+INSERT INTO developers_skills VALUES (20, 1);
+INSERT INTO developers_skills VALUES (20, 2);
+INSERT INTO developers_skills VALUES (20, 6);
+INSERT INTO developers_skills VALUES (20, 8);
+INSERT INTO developers_skills VALUES (20, 10);
+INSERT INTO developers_skills VALUES (20, 14);
+INSERT INTO developers_skills VALUES (20, 15);

@@ -3,6 +3,6 @@ ALTER TABLE developers
   AFTER lname;
 
 UPDATE developers d
-SET d.salary = 150 * (SELECT count(ds.skill_id)
+SET d.salary = 180 * (SELECT count(ds.skill_id)
                       FROM developers_skills ds
                       WHERE ds.developer_id = d.developer_id);
