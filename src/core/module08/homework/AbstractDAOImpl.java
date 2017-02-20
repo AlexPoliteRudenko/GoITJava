@@ -5,10 +5,25 @@ import java.util.List;
 
 public abstract class AbstractDAOImpl<T extends AbstractEntity> implements AbstractDAO<T> {
     private List<T> list = new ArrayList<>();
+
     @Override
     public T save(T t) {
         list.add(t);
         return t;
+    }
+
+    @Override
+    public void deleteById(long id) {
+        list.removeIf(t -> t.getId() == id);
+    }
+
+    @Override
+    public T get(long id) {
+        if (list.stream().anyMatch(t -> t.getId() == id)) {
+            return list.stream().filter(t -> t.getId() == id).findFirst().get();
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -17,7 +32,7 @@ public abstract class AbstractDAOImpl<T extends AbstractEntity> implements Abstr
     }
 
     @Override
-    public void deleteAll(List<? extends T> tList) {
+    public void deleteAll(List<T> tList) {
         list.removeAll(tList);
     }
 
