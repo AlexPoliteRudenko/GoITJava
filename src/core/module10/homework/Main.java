@@ -53,7 +53,7 @@ public class Main {
         try {
             throw new MyException("Task 2 exception");
         } catch (MyException e) {
-            e.printMessage();
+            System.out.println(e.getMessage());
         }
     }
 }
