@@ -1,66 +1,66 @@
-INSERT INTO customers VALUES
-  (NULL, 'Gates'),
-  (NULL, 'Jobs');
+INSERT  INTO customers (name) VALUES
+  ('Gates'),
+  ('Jobs');
 
-INSERT INTO companies VALUES
-  (NULL, 'Oracle', 'Redwood City'),
-  (NULL, 'Microsoft', 'Redmond'),
-  (NULL, 'Apple', 'Cupertino');
+INSERT INTO companies (name, address) VALUES
+  ('Oracle', 'Redwood City'),
+  ('Microsoft', 'Redmond'),
+  ('Apple', 'Cupertino');
 
-INSERT INTO projects VALUES
-  (NULL, 'Java', 2),
-  (NULL, 'MySQL', 1),
-  (NULL, 'Oracle Cloud', 2),
-  (NULL, 'Skype', 1),
-  (NULL, 'Windows', 1),
-  (NULL, 'Office', 2),
-  (NULL, 'iPhone', 1),
-  (NULL, 'MacBook', 2),
-  (NULL, 'iTunes', 1);
+INSERT INTO projects (name, customer_id) VALUES
+  ('Java', 2),
+  ('MySQL', 1),
+  ('Oracle Cloud', 2),
+  ('Skype', 1),
+  ('Windows', 1),
+  ('Office', 2),
+  ('iPhone', 1),
+  ('MacBook', 2),
+  ('iTunes', 1);
 
-INSERT INTO developers VALUES
-  (NULL, 'Alex', 'Rudenko', 'test@mail.ru', 7, 3),
-  (NULL, 'Vasya', 'Pupkin', 'pup@mail.ru', 9, 3),
-  (NULL, 'Volodymyr', 'Kryshtalov', '1@mail.ru', 3, 1),
-  (NULL, 'Ivan', 'Ivanov', 'ivanov@mail.ru', 9, 3),
-  (NULL, 'Igor', 'Novak', 'novak@mail.ru', 8, 3),
-  (NULL, 'Tanya', 'Kohan', 'test1@mail.ru', 2, 1),
-  (NULL, 'Ivan', 'Povar', 'test2@mail.ru', 2, 1),
-  (NULL, 'Denys', 'Kolem', 'test3@mail.ru', 1, 1),
-  (NULL, 'Illya', 'Nirenko', 'test4@mail.ru', 1, 1),
-  (NULL, 'Taras', 'Stepanenko', 'test5@mail.ru', 7, 3),
-  (NULL, 'John', 'Ovcharenko', 'test6@mail.ru', 8, 3),
-  (NULL, 'Semen', 'Nochovniy', 'test7@mail.ru', 3, 1),
-  (NULL, 'Kate', 'Rudenko', 'test8@mail.ru', 3, 1),
-  (NULL, 'Nonna', 'Pogoreliy', 'test9@mail.ru', 4, 2),
-  (NULL, 'Alexandr', 'Korenniy', 'test0@mail.ru', 4, 2),
-  (NULL, 'Vova', 'Turenko', 'testtest@mail.ru', 6, 2),
-  (NULL, 'Bogdan', 'Lomak', 'testtest1@mail.ru', 5, 2),
-  (NULL, 'Milena', 'Kovrov', 'testtest2@mail.ru', 5, 2),
-  (NULL, 'Michael', 'Komaroff', 'testtest3@mail.ru', 6, 2),
-  (NULL, 'Sophie', 'Hom', 'testtest4@mail.ru', 5, 2),
-  (NULL, 'Julia', 'Roberts', 'testtest5@mail.ru', 8, 3);
-
-
-INSERT INTO skills VALUES
-  (NULL, 'Java 8'),
-  (NULL, 'SQL'),
-  (NULL, 'JSON'),
-  (NULL, 'C++'),
-  (NULL, 'Jdbs'),
-  (NULL, 'Spring'),
-  (NULL, 'HTML'),
-  (NULL, 'Maven'),
-  (NULL, 'Php'),
-  (NULL, 'Python'),
-  (NULL, 'Servlets'),
-  (NULL, 'UX'),
-  (NULL, 'QA'),
-  (NULL, 'Thrello'),
-  (NULL, 'XML');
+INSERT INTO developers (fname, lname, email, project_id, company_id) VALUES
+  ('Alex', 'Rudenko', 'test@mail.ru', 7, 3),
+  ('Vasya', 'Pupkin', 'pup@mail.ru', 9, 3),
+  ('Volodymyr', 'Kryshtalov', '1@mail.ru', 3, 1),
+  ('Ivan', 'Ivanov', 'ivanov@mail.ru', 9, 3),
+  ('Igor', 'Novak', 'novak@mail.ru', 8, 3),
+  ('Tanya', 'Kohan', 'test1@mail.ru', 2, 1),
+  ('Ivan', 'Povar', 'test2@mail.ru', 2, 1),
+  ('Denys', 'Kolem', 'test3@mail.ru', 1, 1),
+  ('Illya', 'Nirenko', 'test4@mail.ru', 1, 1),
+  ('Taras', 'Stepanenko', 'test5@mail.ru', 7, 3),
+  ('John', 'Ovcharenko', 'test6@mail.ru', 8, 3),
+  ('Semen', 'Nochovniy', 'test7@mail.ru', 3, 1),
+  ('Kate', 'Rudenko', 'test8@mail.ru', 3, 1),
+  ('Nonna', 'Pogoreliy', 'test9@mail.ru', 4, 2),
+  ('Alexandr', 'Korenniy', 'test0@mail.ru', 4, 2),
+  ('Vova', 'Turenko', 'testtest@mail.ru', 6, 2),
+  ('Bogdan', 'Lomak', 'testtest1@mail.ru', 5, 2),
+  ('Milena', 'Kovrov', 'testtest2@mail.ru', 5, 2),
+  ('Michael', 'Komaroff', 'testtest3@mail.ru', 6, 2),
+  ('Sophie', 'Hom', 'testtest4@mail.ru', 5, 2),
+  ('Julia', 'Roberts', 'testtest5@mail.ru', 8, 3);
 
 
-INSERT INTO developers_skills VALUES
+INSERT INTO skills (name) VALUES
+  ('Java 8'),
+  ('SQL'),
+  ('JSON'),
+  ('C++'),
+  ('Jdbs'),
+  ('Spring'),
+  ('HTML'),
+  ('Maven'),
+  ('Php'),
+  ('Python'),
+  ('Servlets'),
+  ('UX'),
+  ('QA'),
+  ('Thrello'),
+  ('XML');
+
+
+INSERT INTO developers_skills (developer_id, skill_id) VALUES
   (1, 1),
   (1, 2),
   (1, 3),
