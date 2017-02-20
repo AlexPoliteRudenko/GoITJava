@@ -31,7 +31,7 @@ public class Main {
     }
 
     private static void testTask04() {
-        A a = new A();
+        TestExceptionClassA a = new TestExceptionClassA();
         try {
             a.f();
         } catch (FException e) {

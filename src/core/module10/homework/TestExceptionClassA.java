@@ -1,6 +1,6 @@
 package core.module10.homework;
 
-public class A {
+public class TestExceptionClassA {
     void f() throws FException{
         try {
             this.g();
