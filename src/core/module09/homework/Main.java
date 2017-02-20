@@ -38,25 +38,25 @@ public class Main {
         Collections.addAll(orders, order1, order2, order3, order4, order12, order5, order6, order7, order8, order9, order10, order11);
 
         //---------------------------------------------------------------------------------
-        PrintSortResult(orders, "source list:");
+        printSortResult(orders, "source list:");
 
         //---------------------------------------------------------------------------------
         sortByPrice(orders);
-        PrintSortResult(orders, "sorted list by price in decrase order");
+        printSortResult(orders, "sorted list by price in decrase order");
 
         //---------------------------------------------------------------------------------
         sortByPriceAndCity(orders);
-        PrintSortResult(orders, "sorted list by price and city");
+        printSortResult(orders, "sorted list by price and city");
 
         //---------------------------------------------------------------------------------
         sortByItemThenShopThenCity(orders);
-        PrintSortResult(orders, "sorted list by itemName and shopIdentificator and city");
+        printSortResult(orders, "sorted list by itemName and shopIdentificator and city");
 
         //---------------------------------------------------------------------------------
-        PrintSortResult(getUniqueOrders(orders), "deleted duplicates in list");
+        printSortResult(getUniqueOrders(orders), "deleted duplicates in list");
 
         //---------------------------------------------------------------------------------
-        PrintSortResult(getOrdersLess1500(orders), "deleted items with price less then 1500");
+        printSortResult(getOrdersLess1500(orders), "deleted items with price less then 1500");
 
         //---------------------------------------------------------------------------------
         System.out.println(getCurrencyListMap(orders).toString());
@@ -72,7 +72,7 @@ public class Main {
                 " contains order (s) with users with last name Petrov");
         System.out.println();
         //---------------------------------------------------------------------------------
-        PrintSortResult(getOrdersWithoutCurrency(orders, Currency.USD), "deleted items with Currency USD");
+        printSortResult(getOrdersWithoutCurrency(orders, Currency.USD), "deleted items with Currency USD");
     }
 
     public static List<Order> getOrdersWithoutCurrency(List<Order> orders, Currency cur) {
@@ -117,7 +117,7 @@ public class Main {
         orders.sort((o1, o2) -> o2.getPrice() - o1.getPrice());
     }
 
-    public static void PrintSortResult(Collection<Order> orders, String s) {
+    public static void printSortResult(Collection<Order> orders, String s) {
         System.out.println("---------------------------" + s + "---------------------------");
         orders.forEach(System.out::print);
         System.out.println();
