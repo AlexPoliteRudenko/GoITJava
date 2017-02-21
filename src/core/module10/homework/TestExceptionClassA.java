@@ -5,8 +5,7 @@ public class TestExceptionClassA {
         try {
             this.g();
         } catch (GException e) {
-            System.out.println("Cought Task 4 g() exception");
-            throw new FException();
+            throw new FException(e);
         }
     }
 
