@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Task01 {
-    static void Solution() {
+    static void solution() {
         String var = readFileToString("src/core/module11/homework/test.txt");
         Map<String, String> map = getMapWithReplaceParameters();
         String replaceResult = replacer(map, var);
@@ -39,9 +39,8 @@ class Task01 {
     }
 
     static String replacer(Map<String, String> map, String var) {
-
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            var = var.replaceAll(entry.getKey(), entry.getValue());
+        for (String key : map.keySet()) {
+            var = var.replaceAll(key, map.get(key));
         }
         return var;
     }

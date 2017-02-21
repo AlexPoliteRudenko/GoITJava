@@ -1,14 +1,11 @@
 package core.module11.homework;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
 class Task03 {
-    static void Solution() {
+    static void solution() {
         String pathname = "src/core/module11/homework/test.txt";
         String var = Task01.readFileToString(pathname);
         Map<String, String> map = getMapWithReplaceParameters();
@@ -25,10 +22,8 @@ class Task03 {
     }
 
     static void fileContentMerger(String pathname, String replaceResult) {
-        StringBuilder sb = new StringBuilder(Task01.readFileToString(pathname));
-        sb.append(replaceResult);
-        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(pathname)))){
-            writer.write(sb.toString());
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(pathname,true))){
+            writer.write(replaceResult);
         } catch (IOException e) {
             e.printStackTrace();
         }

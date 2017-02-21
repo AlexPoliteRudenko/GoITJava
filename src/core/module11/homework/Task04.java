@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class Task04 {
-    static void Solution() {
+    static void solution() {
         String pathname = "src/core/module11/homework/test.txt";
         String var = Task01.readFileToString(pathname);
         int containTimes = checkWord("some", var);
